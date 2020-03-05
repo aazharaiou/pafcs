@@ -1,0 +1,17 @@
+.bg-white
+{
+	/*background-color: #DCD5CD !important;*/
+}
+
+.card-header
+{
+	background-color: #009688 !important;
+	color: white;
+}
+.card-body{
+/*background-color: lightsteelblue;*/
+}
+body
+{
+background-image: url(../5.jpg) !important;
+}
