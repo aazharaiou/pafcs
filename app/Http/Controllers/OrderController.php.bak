@@ -12,6 +12,7 @@ use App\Sale;
 use DB;
 use Auth;
 
+
 class OrderController extends Controller
 {
     /**
