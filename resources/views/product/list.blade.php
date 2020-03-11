@@ -5,7 +5,6 @@
 	{{-- @can('create', App\product::class) --}}
 		<a href="{{ url('/product/create') }}" class="btn btn-primary btn-lg text-uppercase"><span class="fa fa-plus" ></span> Create product </a>
 	{{-- @endcan --}}
-	<a href="{{ url('/allproduct') }}" class="btn btn-primary btn-lg text-uppercase pull-right" target = "_blank"><span class="fa fa-list"></span> All Product List</a>
 
 <div class="col-6">&nbsp;</div>
 

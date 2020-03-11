@@ -39,7 +39,7 @@ class ProductController extends Controller
         if(!in_array(Auth::user()->role,['Admin']))
             return view('home')->with('message','You are not authorized for the page you tried to visit');
         $vendors = Vendor::all();
-        return view('product.create',compact('vendors'));
+        return view('product.create');
         //
     }
 
@@ -54,7 +54,6 @@ class ProductController extends Controller
         if(!in_array(Auth::user()->role,['Admin']))
             return view('home')->with('message','You are not authorized for the page you tried to visit');
         $data = $request->validate([
-            'vendor_id' => 'required',
             'partno' => 'required',
             'noun' => 'required',
             'ui' => '',
@@ -91,9 +90,8 @@ class ProductController extends Controller
     {
         if(!in_array(Auth::user()->role,['Admin']))
             return view('home')->with('message','You are not authorized for the page you tried to visit');
-        $vendors = Vendor::all();
         $product = Product::find($id);
-        return view('product.edit', compact('product', 'vendors'));
+        return view('product.edit', compact('product'));
         //
 
         //
@@ -111,7 +109,6 @@ class ProductController extends Controller
         if(!in_array(Auth::user()->role,['Admin']))
             return view('home')->with('message','You are not authorized for the page you tried to visit');
         $data = $request->validate([
-            'vendor_id' => 'required',
             'partno' => 'required',
             'noun' => 'required',
             'ui' => '',

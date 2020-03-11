@@ -6,18 +6,7 @@
 <div class="text-danger">* Mandatory Fields</div>
 <form action="{{ url('/product') }}" method="post" autocomplete="off">
 	@csrf
-	
-	<div class="form-group">
-		<label for="vendorid">Vendor</label><span class="text-danger">*</span>
-		<select name="vendor_id" id="vendor_id" class="form-control" autofocus="autofocus">
-		<option value="">select vendor</option>
-		@foreach ($vendors as $vendor)
-			<option value="{{ $vendor->id }}" {{ old('vendor_id') == $vendor->id ? 'selected' : '' }}>{{ $vendor->title }}</option>
-		@endforeach
-		</select>
-	</div>
-	<span class="text-danger">{{ $errors->first('vendor_id') }}</span>
-	
+		
 	<div class="form-group">
 	<label for="code">Part No</label><span class="text-danger">*</span>
 	<input type="text" name="partno" class="form-control " value="{{ old('partno') }}">

@@ -6,9 +6,7 @@
 
 
 <table class = 'table'>
-<tr>
-	<td>Vendor</td> <td>{{ $product->vendor->title }}</td>
-</tr>
+
 <tr>
 	<td>Part No</td> <td>{{ $product->partno }}</td>
 </tr>

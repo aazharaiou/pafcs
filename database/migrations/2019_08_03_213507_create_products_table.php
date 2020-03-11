@@ -19,11 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('noun');
             $table->string('ui')->nullable();
             $table->string('picture')->nullable();
-            $table->integer('vendor_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
-
-            $table->foreign('vendor_id')->references('id')->on('vendors');
         });
     }
 
