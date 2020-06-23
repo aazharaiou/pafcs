@@ -82,7 +82,7 @@ class OrderController extends Controller
         }
         //$fname = $request->poimage->store('public/upload');
        // dd($request->poimage);
-        $fname = Storage::disk('public_uploads')->put($request->originalName, $request->poimage);
+        $fname = Storage::disk('orders_uploads')->put($request->originalName, $request->poimage);
         $filewithpath = pathinfo($fname);
 
         //$request['poimage']=$filewithpath['basename'];
