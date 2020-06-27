@@ -204,4 +204,13 @@ class CompanyController extends Controller
         return redirect ('company');
         //
     }
+
+    public function allcompanies()
+    {
+        if(!in_array(Auth::user()->role,['Admin']))
+            return view('home')->with('message','You are not authorized for the page you tried to visit');
+        $allcompanies = Company::all();
+
+        return view('company.allcompany', compact('allcompanies'));
+    }
 }
