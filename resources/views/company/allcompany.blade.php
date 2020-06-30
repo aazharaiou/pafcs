@@ -16,9 +16,9 @@
 	@foreach($allcompanies as $company)
 	<tr>
 		<td>{{ $company->title }}</td>
-		<td><img src="{{ url('/upload/orders',$company->logo) }}"  width="150px"></td>
-		<td><img src="{{ url('/upload/orders',$company->header) }}" width="150px"></td>
-		<td><img src="{{ url('/upload/orders',$company->footer) }}"  width="150px"></td>
+		<td><img src="{{ url('/upload/companies',$company->logo) }}"  width="150px"></td>
+		<td><img src="{{ url('/upload/companies',$company->header) }}" width="150px"></td>
+		<td><img src="{{ url('/upload/companies',$company->footer) }}"  width="150px"></td>
 		
 	</tr>
 	@endforeach
