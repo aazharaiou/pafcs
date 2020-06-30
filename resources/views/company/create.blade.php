@@ -27,12 +27,10 @@
 	<span class="text-danger">{{ $errors->first('header') }}</span>
 
 	<div class="form-group">
-	<label for="footer">Footer</label>
+	<label for="footer">Footer</label><span class="text-danger">*</span>
 	<input type="file" name="footer" class="form-control " value="{{ old('footer') }}">
 	</div>
 	
-	
-
 	<button class="btn btn-primary">Submit</button>
 </form>
 

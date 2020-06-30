@@ -52,6 +52,11 @@ return [
             'driver' => 'local',
             'root'   => public_path() . '/upload/orders',
         ],
+        
+        'companies_uploads' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/upload/companies',
+        ],
 
         'local' => [
             'driver' => 'local',

@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Azhar ul Islam',
             'email' => 'azhar@azhar.com',
             'password' => Hash::make('demo'),
+            'role' => 'Admin'
         ]);
     }
 }

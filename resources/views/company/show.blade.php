@@ -11,13 +11,13 @@
 </tr>
 
 <tr>
-	<td>Logo</td> <td><img src="{{ url('/upload/orders',$company->logo) }}" width="150px"></td>
+	<td>Logo</td> <td><img src="{{ url('/upload/companies',$company->logo) }}" width="150px"></td>
 </tr>
 <tr>
-	<td>Header</td> <td><img src="{{ url('/upload/orders',$company->header) }}" width="150px"> </td>
+	<td>Header</td> <td><img src="{{ url('/upload/companies',$company->header) }}" width="150px"> </td>
 </tr>
 <tr>
-	<td>Footer</td> <td><img src="{{ url('/upload/orders',$company->footer) }}" width="150px"></td>
+	<td>Footer</td> <td><img src="{{ url('/upload/companies',$company->footer) }}" width="150px"></td>
 </tr>
 </table>
 

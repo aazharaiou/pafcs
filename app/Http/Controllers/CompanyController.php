@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Validator;
-use App\company;
+use App\Company;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
@@ -61,7 +61,7 @@ class CompanyController extends Controller
         
         $company = Validator::make($request->only(['title','logo','header','footer']), [
             'title' => 'required',
-            'logo' => 'required|image|mimes:jpeg,png,jpg|max:2000',
+            'logo' => 'required|image|mimes:jpeg,png,jpg|max:200',
             'header' => 'required|image|mimes:jpeg,png,jpg|max:2000',
             'footer' => 'required|image|mimes:jpeg,png,jpg|max:2000',
         ]);
@@ -73,13 +73,13 @@ class CompanyController extends Controller
                         ->withInput();
         }
 
-        $logoname = Storage::disk('orders_uploads')->put($request->originalName, $request->logo);
+        $logoname = Storage::disk('companies_uploads')->put($request->originalName, $request->logo);
         $logowithpath = pathinfo($logoname);
 
-        $headername = Storage::disk('orders_uploads')->put($request->originalName, $request->header);
+        $headername = Storage::disk('companies_uploads')->put($request->originalName, $request->header);
         $headerwithpath = pathinfo($headername);
 
-        $footername = Storage::disk('orders_uploads')->put($request->originalName, $request->footer);
+        $footername = Storage::disk('companies_uploads')->put($request->originalName, $request->footer);
         $footerwithpath = pathinfo($footername);
 
 
@@ -138,9 +138,9 @@ class CompanyController extends Controller
     {
         if(!in_array(Auth::user()->role,['Admin']))
             return view('home')->with('message','You are not authorized for the page you tried to visit');
-        $logo_name = $request->logo_image;
-        $header_name = $request->header_image;
-        $footer_name = $request->footer_image;
+        // $logo_name = $request->logo_image;
+        // $header_name = $request->header_image;
+        // $footer_name = $request->footer_image;
         
         $logo_is_uploaded = $request->hasFile('logo');
         $header_is_uploaded = $request->hasFile('header');
@@ -149,22 +149,22 @@ class CompanyController extends Controller
         if($logo_is_uploaded && $header_is_uploaded && $footer_is_uploaded)
         {
             $data = $request->validate([
-                'logo' => 'required|image|mimes:jpeg,png,jpg|max:2000',
+                'logo' => 'required|image|mimes:jpeg,png,jpg|max:200',
                 'header' => 'required|image|mimes:jpeg,png,jpg|max:2000',
                 'footer' => 'required|image|mimes:jpeg,png,jpg|max:2000'
             ]);
         
-        $logoname = Storage::disk('orders_uploads')->put($request->originalName, $request->logo_image);
+        $logoname = Storage::disk('companies_uploads')->put($request->originalName, $request->logo);
         $logowithpath = pathinfo($logoname);
 
-        $headername = Storage::disk('orders_uploads')->put($request->originalName, $request->header);
+        $headername = Storage::disk('companies_uploads')->put($request->originalName, $request->header);
         $headerwithpath = pathinfo($headername);
 
-        $footername = Storage::disk('orders_uploads')->put($request->originalName, $request->footer);
+        $footername = Storage::disk('companies_uploads')->put($request->originalName, $request->footer);
         $footerwithpath = pathinfo($footername);
 
 
-        $data = $company->validate();
+        // $data = $company->validate();
 
         $data['logo']=$logowithpath['basename'];
         $data['header']=$headerwithpath['basename'];
