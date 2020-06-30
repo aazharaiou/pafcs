@@ -2,21 +2,19 @@
 
 @section('content')
 
-	{{-- @can('create', App\customer::class) --}}
-		<a href="{{ url('/customer/create') }}" class="btn btn-primary btn-lg text-uppercase"><span class="fa fa-plus"></span> Create Customer </a>
-	{{-- @endcan --}}
-	<a href="{{ url('/allcustomer') }}" class="btn btn-primary btn-lg text-uppercase pull-right" target="_blank"><span class="fa fa-list"></span> All Customer List</a>
+		<a href="{{ url('/company/create') }}" class="btn btn-primary btn-lg text-uppercase"><span class="fa fa-plus"></span> Create Company </a>
+	<a href="{{ url('/allcompany') }}" class="btn btn-primary btn-lg text-uppercase pull-right" target="_blank"><span class="fa fa-list"></span> All companies List</a>
 
 <div class="col-6">&nbsp;</div>
 
-<h1>Registered Customers</h1>
+<h1>Registered Companies</h1>
 
-@if(count($customers) > 0)
+@if(count($companies) > 0)
 <table class = 'table' id='dtable'>
 	<thead>
 		<tr>
 			<th>Id</th>
-			<th>customer Tiltle</th>
+			<th>Company Tiltle</th>
 			<th>Action</th>
 			<th></th>
 			<th></th>
@@ -26,14 +24,14 @@
 	</thead>
 <tbody>
 
-@foreach($customers  as $customer)
+@foreach($companies  as $company)
 <tr>
-	<td> {{ $customer->id }} </td>
-	<td> {{ $customer->title }} </td>
-	<td> <a  href ="{{ url('/customer', $customer->id )}}" class="btn btn-primary"><span class="fa fa-eye"></span> View</a> </td>
-	<td> <a  href ="{{ url('/customer', $customer->id )}}/edit" class="btn btn-primary"><span class="fa fa-pencil"></span> Edit</a> </td>
+	<td> {{ $company->id }} </td>
+	<td> {{ $company->title }} </td>
+	<td> <a  href ="{{ url('/company', $company->id )}}" class="btn btn-primary"><span class="fa fa-eye"></span> View</a> </td>
+	<td> <a  href ="{{ url('/company', $company->id )}}/edit" class="btn btn-primary"><span class="fa fa-pencil"></span> Edit</a> </td>
 	<td>
-		<form action="{{ url('/customer',$customer->id) }}" method="post">
+		<form action="{{ url('/company',$company->id) }}" method="post">
 			@csrf
 			@method('DELETE')
 
@@ -41,10 +39,10 @@
 		</form>
 	</td>
 	<td>
-		<a href="{{ url('/customerproduct/create') }}" class="btn btn-primary">Add Customer Product</a>
+		{{-- <a href="{{ url('/companyproduct/create') }}" class="btn btn-primary">Add company Product</a> --}}
 	</td>
 	<td>
-		<a href="{{ url('/product_list',$customer->id )}}/list" class="btn btn-primary">Customer Product Profile</a>
+		{{-- <a href="{{ url('/product_list',$customer->id )}}/list" class="btn btn-primary">Customer Product Profile</a> --}}
 	</td>
 	
 </tr>
@@ -60,7 +58,7 @@
 
 <script type="text/javascript">
 	function tocheckdelete(){
-		if(!confirm('Are you sure to want to delete this record>') == true)
+		if(!confirm('Are you sure to want to delete this record?') == true)
 		{
 			return false;
 		}

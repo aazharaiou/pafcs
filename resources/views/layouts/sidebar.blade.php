@@ -18,13 +18,21 @@
 		</div>
 	</li>
 
-{{-- 	<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Territory</a>
+	<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
 		<div class="dropdown-menu">
-			<a href="{{ url('territory/create') }}" class="dropdown-item">Create Territory</a>
-			<a href="{{ url('territory') }}" class="dropdown-item">List Territory</a>
+			<a href="{{ url('product/create') }}" class="dropdown-item">Create Product</a>
+			<a href="{{ url('product') }}" class="dropdown-item">List Product</a>
 			
 		</div>
-	</li> --}}
+	</li>
+	
+	<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Companies</a>
+		<div class="dropdown-menu">
+			<a href="{{ url('company/create') }}" class="dropdown-item">Create Company</a>
+			<a href="{{ url('company') }}" class="dropdown-item">List Companies</a>
+			
+		</div>
+	</li>
 
 {{-- 	<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Shipper</a>
 		<div class="dropdown-menu">
@@ -42,13 +50,7 @@
 		</div>
 	</li>
  --}}
-	<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
-		<div class="dropdown-menu">
-			<a href="{{ url('product/create') }}" class="dropdown-item">Create Product</a>
-			<a href="{{ url('product') }}" class="dropdown-item">List Product</a>
-			
-		</div>
-	</li>
+
 
 {{-- 	<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Purchase</a>
 		<div class="dropdown-menu">

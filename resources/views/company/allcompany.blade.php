@@ -2,31 +2,24 @@
 
 @section('content')
 
-<h1>All Customer List</h1>
+<h1>All Companies List</h1>
 
 
 <table class = 'table table-bordered table-hover'>
 <thead>
-	<th>Customer Title</th>
-	<th>Address</th>
-	<th>Cell No</th>
-	<th>Office No</th>
-	<th>Fax No</th>
-	<th>Email</th>
-	<th>NTN</th>
-	<th>Territory</th>
+	<th>Company Title</th>
+	<th>Logo</th>
+	<th>Header</th>
+	<th>Footer</th>
 </thead>
 <tbody>
-	@foreach($allcustomer as $customer)
+	@foreach($allcompanies as $company)
 	<tr>
-		<td>{{ $customer->title }}</td>
-		<td>{{ $customer->address }}</td>
-		<td>{{ $customer->cellno }}</td>
-		<td>{{ $customer->officeno }}</td>
-		<td>{{ $customer->faxno }}</td>
-		<td>{{ $customer->email }}</td>
-		<td>{{ $customer->ntn }}</td>
-		<td>{{ $customer->territory->title }}</td>
+		<td>{{ $company->title }}</td>
+		<td><img src="{{ url('/upload/orders',$company->logo) }}"  width="150px"></td>
+		<td><img src="{{ url('/upload/orders',$company->header) }}" width="150px"></td>
+		<td><img src="{{ url('/upload/orders',$company->footer) }}"  width="150px"></td>
+		
 	</tr>
 	@endforeach
 </tbody>

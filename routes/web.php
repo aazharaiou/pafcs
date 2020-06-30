@@ -73,7 +73,9 @@ Route::PATCH('/puser/{id}','UserController@ChangePassword_Update');
 Route::resource('vendor','VendorController');
 Route::get('allvendors', 'VendorController@allvendors');
 Route::resource('warehouse', 'WarehouseController');
-Route::resource('territory', 'TerritoryController');
+Route::resource('company', 'CompanyController');
+Route::get('allcompany', 'CompanyController@allcompanies');
+
 Route::resource('customer', 'CustomerController');
 Route::get('allcustomer', 'CustomerController@allcustomer');
 Route::get('/product_list/{id}/list','CustomerproductController@CustomerProductList');
