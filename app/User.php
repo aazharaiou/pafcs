@@ -15,7 +15,7 @@ class User extends Authenticatable
     
     //activity logging starts
     use LogsActivity;
-    protected static $logAttributes = ['name', 'email'];
+    protected static $logAttributes = ['name', 'email','role'];
     protected static $logName = 'User';
     protected static $logOnlyDirty = true;
     protected static $submitEmptyLogs = false;
