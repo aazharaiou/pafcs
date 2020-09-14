@@ -18,6 +18,16 @@
 		</div>
 	</li>
 
+	<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Buyer</a>
+		<div class="dropdown-menu">
+			<a href="{{ url('buyer/create') }}" class="dropdown-item">Create Buyer</a>
+			<a href="{{ url('buyer') }}" class="dropdown-item">List Buyers</a>
+		    
+			
+		</div>
+	</li>
+
+
 	<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
 		<div class="dropdown-menu">
 			<a href="{{ url('product/create') }}" class="dropdown-item">Create Product</a>

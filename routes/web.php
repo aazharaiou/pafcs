@@ -69,6 +69,8 @@ Route::resource('user', 'UserController');
 Route::get('/puser/{id}/pedit','UserController@ChangePassword_Form');
 Route::PATCH('/puser/{id}','UserController@ChangePassword_Update');
 
+Route::resource('buyer','BuyerController');
+
 
 Route::resource('vendor','VendorController');
 Route::get('allvendors', 'VendorController@allvendors');
